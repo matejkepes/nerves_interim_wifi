@@ -115,6 +115,7 @@ defmodule Nerves.InterimWiFi.DHCPManager do
 
   defp consume(_, :noop, state), do: state
   ## Context: :removed
+  defp consume(:removde, :ifdown, state), do: state
   defp consume(:removed, :ifadded, state) do
     case Nerves.NetworkInterface.ifup(state.ifname) do
       :ok ->
