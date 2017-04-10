@@ -147,7 +147,7 @@ defmodule Nerves.InterimWiFi.DHCPManager do
   end
 
   ## Context: :down
-  defp consume(:down, {:deconfig, interface}, state), do: state
+  defp consume(:down, {:deconfig, _interface}, state), do: state
   defp consume(:down, :ifadded, state), do: state
   defp consume(:down, :ifup, state) do
     state
